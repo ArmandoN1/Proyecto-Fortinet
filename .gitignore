@@ -14,7 +14,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 coverage/
-public/kling_20260704_VIDEO_Create_a_c_867_0.mp4
 
 # TypeScript
 *.tsbuildinfo

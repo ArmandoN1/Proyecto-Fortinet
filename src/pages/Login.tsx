@@ -160,6 +160,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
       <video
         className="fixed inset-0 w-full h-full object-cover z-0"
         src="/kling_20260704_VIDEO_Create_a_c_867_0.mp4"
+        preload="auto"
         autoPlay
         muted
         loop
