@@ -167,6 +167,17 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
         playsInline
         style={{ pointerEvents: "none" }}
       />
+
+      <div className="login-video-overlay pointer-events-none">
+        <div className="loader">
+          {[...Array(9)].map((_, index) => (
+            <div key={index} className="text"><span>Loading</span></div>
+          ))}
+          <div className="line" />
+        </div>
+        <div className="video-watermark-block" />
+      </div>
+
       {leaving && <div className="exit-flash" />}
 
       {/* barridos de escaneo del fondo */}
