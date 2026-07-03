@@ -159,7 +159,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
     >
       <video
         className="fixed inset-0 w-full h-full object-cover z-0"
-        src="/clideo_editor_d6d95c3603414452be9fa927a944aa9d.mp4"
+        src="/kling_20260704_VIDEO_Create_a_c_867_0.mp4"
         preload="auto"
         autoPlay
         muted
