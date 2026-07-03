@@ -104,15 +104,9 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
   const [remember, setRemember] = useState(true);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [leaving, setLeaving] = useState(false);
-  const [showIntro, setShowIntro] = useState(true);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const introTimer = setTimeout(() => setShowIntro(false), 25000);
-    return () => clearTimeout(introTimer);
-  }, []);
 
   const onCardMove = (e: MouseEvent<HTMLDivElement>) => {
     const el = cardRef.current;
@@ -174,26 +168,6 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
         style={{ pointerEvents: "none" }}
       />
 
-      {showIntro && (
-        <div className="intro-screen">
-          <video
-            className="intro-video"
-            src="/clideo_editor_d6d95c3603414452be9fa927a944aa9d.mp4"
-            preload="auto"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-          <div className="loader">
-            {[...Array(9)].map((_, index) => (
-              <div key={index} className="text"><span>Loading</span></div>
-            ))}
-            <div className="line" />
-          </div>
-          <div className="video-watermark-block" />
-        </div>
-      )}
 
       {leaving && <div className="exit-flash" />}
 

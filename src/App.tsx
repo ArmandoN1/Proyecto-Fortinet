@@ -4,6 +4,7 @@ import Particles from "./components/Particles";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Login from "./pages/Login";
+import Loading from "./pages/Loading";
 import Overview from "./pages/Overview";
 import Simulations from "./pages/Simulations";
 import Attacks from "./pages/Attacks";
@@ -98,7 +99,7 @@ function LiveAlert() {
 }
 
 export default function App() {
-  const [authed, setAuthed] = useState(false);
+  const [phase, setPhase] = useState<"login" | "loading" | "dashboard">("login");
   const [active, setActive] = useState("resumen");
   const [mode, setMode] = useState<"soc" | "lab">("soc");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -106,8 +107,17 @@ export default function App() {
 
   const meta = pageMeta[active] ?? pageMeta.resumen;
 
-  if (!authed) {
-    return <Login onLogin={() => setAuthed(true)} />;
+  if (phase === "login") {
+    return <Login onLogin={() => setPhase("loading")} />;
+  }
+
+  if (phase === "loading") {
+    return (
+      <Loading onComplete={() => {
+        setPhase("dashboard");
+        setActive("resumen");
+      }} />
+    );
   }
 
   const renderPage = () => {
@@ -153,7 +163,7 @@ export default function App() {
             onToggleSidebar={() => setSidebarOpen((o) => !o)}
             title={meta.title}
             subtitle={meta.subtitle}
-            onLogout={() => setAuthed(false)}
+            onLogout={() => setPhase("login")}
           />
 
           {/* banner modo laboratorio */}
