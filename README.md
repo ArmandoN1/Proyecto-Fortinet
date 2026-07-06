@@ -1,6 +1,7 @@
 # Futuristic Cybersecurity Dashboard
 
 Este proyecto es un panel de seguridad cibernética tipo SOC/SIEM con estética futurista, animaciones de interfaz, visualización de métricas en tiempo real y flujo de navegación entre múltiples pantallas. El resultado actual ya integra diseño visual, arquitectura React + TypeScript, componentes reutilizables, datos simulados, hooks de tiempo real, páginas de dashboard y estilos avanzados con Tailwind y CSS personalizado.
+<p><img align="right" src="https://github.com/Adam-pw/Adam-pw/blob/main/animation_500_kxa883sd.gif" alt="adam-pw" /></p>
 
 ## Visión general
 
@@ -85,7 +86,7 @@ src/
 ## Arquitectura general
 
 La aplicación sigue un patrón simple pero potente:
-
+<img align="right" alt="GIF" height="160px" src="https://media.giphy.com/media/Ah3zHH7hvsSB2/giphy.gif" />
 1. App.tsx actúa como orquestador general.
 2. Maneja el ciclo de fases: login → loading → dashboard.
 3. Controla la página activa seleccionada desde la sidebar.
@@ -215,6 +216,7 @@ La idea de este hook es que, cuando haya una integración real, solo se reemplac
 
 ## Páginas
 
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=th1l1na&label=Profile%20views&color=0e75b6&style=flat" alt="th1l1na" /> </p>
 ### [src/pages/Overview.tsx](src/pages/Overview.tsx)
 Es la vista principal del dashboard. Compone la experiencia resumida con todos los paneles de monitoreo, métricas y alertas. Es la página de entrada del sistema.
 
@@ -265,7 +267,7 @@ Pequeña utilidad para combinar clases CSS de forma limpia. Se usa para mantener
 ## Estilos y diseño visual
 
 El aspecto visual completo de la app está definido principalmente en [src/index.css](src/index.css). Allí se incluyen:
-
+<img align="right" alt="Coding" width="400" src="https://i.pinimg.com/originals/7e/b2/49/7eb249f2fd2e58e9ad6dd60ef892971b.gif">
 - variables de color neón
 - background de circuito
 - glassmorphism
@@ -273,6 +275,7 @@ El aspecto visual completo de la app está definido principalmente en [src/index
 - animaciones de entrada y de carga
 - efectos de scanline, radar y pulso
 - estilos para login, botones, cards y paneles
+  
 
 Los estilos están pensados para ser modernos, inmersivos y consistentes con una identidad visual de consola cibersegura.
 
